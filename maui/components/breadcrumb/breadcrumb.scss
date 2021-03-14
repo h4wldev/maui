@@ -1,0 +1,35 @@
+@import '../../styles/variables/index';
+
+
+.maui-breadcrumb {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+
+  .maui-breadcrumb__item {
+    display: flex;
+    align-items: center;
+    color: $gray-color;
+
+    > .breadcrumb-item__ {
+      &content {
+        display: flex;
+        align-items: center;
+      }
+
+      &separator {
+        margin: 0 .5rem;
+        color: $lighten-gray-color;
+      }
+    }
+
+    &:last-child {
+      color: $darken-gray-color;
+
+      > .breadcrumb-item__separator {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import '../../styles/variables/index';
+@import '../../styles/core/animate';
+
+
+.maui-skeleton {
+  display: inline-block;
+  background-color: $darken-white-color;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    height: 100%;
+    width: 150px;
+    display: block;
+    position: absolute;
+    // left: -150px;
+    top: 0;
+    opacity: .15;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      $lighten-gray-color 50%,
+      transparent 100%
+    );
+    @include animation('skeleton-loading 2.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite');
+  }
+
+  &.maui-skeleton-- {
+    &circle {
+      border-radius: 100%;
+    }
+
+    &rounded {
+      border-radius: $border-radius-size;
+    }
+
+    &no-animation {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

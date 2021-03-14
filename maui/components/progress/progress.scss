@@ -1,0 +1,51 @@
+@import '../../styles/variables/index';
+
+
+.maui-progress {
+  display: inline-flex;
+  overflow: hidden;
+  width: 100%;
+  height: nth($p-sizes, 2);
+  border-radius: $border-radius-size;
+  background-color: $darken-white-color;
+
+  .maui-progress-group {
+    width: 100%;
+  }
+
+  .maui-progress-bar {
+    display: inline-flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    transition: width .2s ease;
+
+    .maui-progress-bar__value {
+      font-size: nth($p-sizes, 1);
+    }
+
+    &.maui-progress-bar-- {
+      &default {
+        background-color: $lighten-gray-color;
+      }
+    }
+  }
+
+  &.maui-progress-- {
+    &huge {
+      height: nth($p-sizes, 5);
+
+      .maui-progress-bar__value {
+        font-size: nth($p-sizes, 2);
+      }
+    }
+
+    &tiny {
+      height: 0.5rem;
+
+      .maui-progress-bar__value {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import '../../styles/variables/index';
+
+.maui-tag {
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: $border-radius-size;
+  padding: .25em .4em;
+  white-space: nowrap;
+
+  > * {
+    font-size: 75%;
+
+    &.maui-tag__close {
+      margin-left: .4em;
+      cursor: pointer;
+    }
+  }
+  
+  &.maui-tag-- {
+    &hollow {
+      background-color: transparent;
+    }
+
+    &squared {
+      border-radius: 0;
+    }
+
+    &pill {
+      border-radius: 99rem;
+    }
+
+    &dashed {
+      border-style: dashed;
+    }
+
+    & {
+      &default {
+        background-color: $white-color;
+        border-color: $lighten-gray-color;
+        color: $lighten-black-color;
+
+        &.maui-tag--hollow {      
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@import '../../styles/variables/index';
+
+.maui-avatar {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  border-radius: 100%;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+  font-size: nth($p-sizes, 2);
+  user-select: none;
+  background-color: $darken-white-color;
+
+  .maui-avatar__content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    .maui-avatar__ {
+      &image {
+        display: inline-flex;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+      }
+
+      &icon {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  &.maui-avatar-- {
+    &huge {
+      font-size: nth($p-sizes, 3);
+      width: 47px;
+      height: 47px;
+
+      .maui-avatar__icon {
+        font-size: 2em;
+      }
+    }
+    
+    &tiny {
+      font-size: nth($p-sizes, 1);
+      width: 29px;
+      height: 29px;
+    }
+
+    &squared {
+      border-radius: 0;
+    }
+
+    &rounded {
+      border-radius: $border-radius-size;
+    }
+  }
+}

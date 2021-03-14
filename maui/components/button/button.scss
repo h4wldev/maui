@@ -1,0 +1,212 @@
+@import '../../styles/variables/index';
+@import '../../styles/core/animate';
+
+
+.maui-button {
+  display: inline-flex;
+  box-sizing: border-box;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  text-align: center;
+  border-radius: $border-radius-size;
+  font-size: nth($p-sizes, 2);
+  padding: 0 15px;
+  height: 32px;
+  min-width: 32px;
+  vertical-align: middle;
+  color: $lighten-black-color;
+  position: relative;
+  outline: 0;
+  line-height: 1;
+  overflow: hidden;
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: border-color ease-out .15s,
+              background-color ease-out .15s,
+              color ease-out .15s;
+
+  > * {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .maui-button__ {
+    &content {
+      order: 2;
+    }
+
+    &icon {
+      &.maui-button__icon-- {
+        &prefix {
+          order: 1;
+          padding-right: .4em;
+        }
+
+        &surfix {
+          order: 3;
+          padding-left: .4em;
+        }
+      }
+    }
+  }
+
+  &.maui-button-- {
+    &loading {
+      .maui-button__icon {
+        > i {
+          @include animation('spin 1.5s linear infinite');
+        }
+      }
+
+      &:not([disabled]) {
+        pointer-events: none;
+      }
+
+      &::before {
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        left: -1px;
+        z-index: 1;
+        background: #fff;
+        border-radius: inherit;
+        opacity: .35;
+        transition: opacity .15s;
+        content: '';
+        pointer-events: none;
+      }
+    }
+
+    &icon-only {
+      padding: 0;
+      width: 32px;
+    
+      .maui-button__icon {
+        padding: 0 !important;
+      }
+    }
+
+    &block {
+      display: flex;
+      width: 100%;
+    }
+
+    &hollow {
+      background-color: transparent;
+    }
+
+    &squared {
+      border-radius: 0;
+    }
+
+    &pill {
+      border-radius: 99rem;
+    }
+
+    &dashed {
+      border-style: dashed;
+    }
+
+    & {
+      &huge {
+        font-size: nth($p-sizes, 3);
+        padding: 0 20px;
+        height: 47px;
+        min-width: 47px;
+
+        &.maui-button--icon-only {
+          width: 47px;
+          padding: 0;
+        }
+      }
+
+      &tiny {
+        font-size: nth($p-sizes, 1);
+        padding: 0 10px;
+        height: 29px;
+        min-width: 29px;
+
+        &.maui-button--icon-only {
+          width: 29px;
+          padding: 0;
+        }
+      }
+
+      &tiniest {
+        font-size: nth($p-sizes, 1);
+        padding: 0 7px;
+        height: 20px;
+        min-width: 20px;
+
+        .maui-tag {
+          display: none;
+        }
+
+        .maui-button__icon {
+          &.maui-button__icon-- {
+            &prefix {
+              order: 1;
+              padding-right: .2em;
+            }
+    
+            &surfix {
+              order: 3;
+              padding-left: .2em;
+            }
+          }
+        }
+
+        &.maui-button--icon-only {
+          width: 20px;
+          padding: 0;
+        }
+      }
+
+      &disabled {
+        border-color: $lighten-gray-color !important;
+        color: $lighten-gray-color !important;
+        background-color: $darken-white-color !important;
+        cursor: not-allowed;
+
+        &:hover {
+          border-color: $lighten-gray-color !important;
+          color: $lighten-gray-color !important;
+          background-color: $darken-white-color !important;
+        }
+
+        &.maui-button--hollow {
+          background-color: transparent !important;
+
+          &:hover {
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+
+    & {
+      &default {
+        background-color: $white-color;
+        border-color: $gray-color;
+        color: $lighten-black-color;
+
+        &:hover,
+        &.maui-button--pressed {
+          background-color: $darken-white-color;
+        }
+
+        &.maui-button--hollow {      
+          background-color: transparent;
+
+          &:hover,
+          &.maui-button--pressed {
+            background-color: $darken-white-color;
+          }
+        }
+      }
+    }
+  }
+}

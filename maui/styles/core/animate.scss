@@ -1,0 +1,18 @@
+@import './mixin';
+
+
+@include keyframes(spin) {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@include keyframes(skeleton-loading) {
+  0% {
+    left: -150px;
+  }
+
+  100% {
+    left: 100%;
+  }
+}

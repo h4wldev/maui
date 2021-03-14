@@ -1,0 +1,110 @@
+@import '../../styles/variables/index';
+
+
+$border-color: lighten($lighten-gray-color, 20%);
+
+
+.maui-card {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid transparent;
+  border-radius: $border-radius-size;
+  overflow: hidden;
+
+  .maui-card__ {
+    &image {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: $border-radius-size;
+      border-bottom: 1px solid transparent;
+
+      .card-image__{
+        &content {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          height: 100%;
+          width: 100%;
+        }
+
+        &image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 0;
+          background-position: center;
+          background-size: cover;
+          height: 100%;
+          width: 100%;
+          transition: transform 0.25s ease-in-out;
+        }
+      }
+
+      &:not(.maui-card__image--no-animation) {
+        &:hover {
+          .card-image__image {
+            transform: scale(1.05); 
+          }
+        }
+      }
+    }
+
+    &header {
+      padding: .8rem .6rem 0;
+      margin-bottom: .3rem;
+      border-bottom: 1px solid transparent;
+    }
+
+    &body {
+      padding: .6rem .6rem 1rem;
+    }
+
+    &footer {
+      margin-top: .2em;
+      padding: 0 .6rem .8rem;
+      border-top: 1px solid transparent;
+    }
+  }
+
+  &.maui-card-- {
+    &has-image {
+      padding-top: 0;
+    }
+
+    &squared {
+      border-radius: 0;
+
+      .maui-card__image {
+        border-radius: 0;
+      }
+    }
+
+    &bordered {
+      border-color: $border-color;
+
+      .maui-card__ {
+        &image,
+        &header,
+        &footer {
+          border-color: $border-color;
+        }
+
+        &header,
+        &footer {
+          padding: .8rem .6rem;
+        }
+
+        &image {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        &header {
+          margin-bottom: .4rem;
+        }
+      }
+    }
+  }
+}

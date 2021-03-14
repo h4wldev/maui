@@ -1,0 +1,34 @@
+{
+  "name": "maui",
+  "version": "0.0.1-alpha",
+  "description": "simply and flat UI Kit with Vue.js",
+  "main": "maui/index.js",
+  "author": "h4wldev@gmail.com",
+  "keywords": [
+    "ui",
+    "uikit",
+    "vue2",
+    "vue",
+    "maui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:h4wldev/maui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/h4wldev/maui/issues"
+  },
+  "files": [
+    "maui"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.5.13",
+    "@vue-hero-icons/outline": "^1.7.2",
+    "@vue-hero-icons/solid": "^1.7.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6"
+  }
+}

@@ -1,0 +1,41 @@
+/**
+ *   Base Sizes
+ **/
+$border-radius-size: 0.3125rem;
+
+
+/**
+ *   Layout Sizes
+ **/
+$screen-sizes: (
+  'xs': 480px,
+  'sm': 768px,
+  'md': 992px,
+  'lg': 1200px
+);
+
+// Container
+$container-sizes: (
+  'xs': 480px,
+  'sm': 768px,
+  'md': 992px,
+  'lg': 1200px
+);
+$outer-margin-size: 24px;
+
+// Grid
+$grid-power-size: .1;
+$column-base-width: 4.166667%;
+
+
+/**
+ *   Paragraph Sizes
+ **/
+$p-sizes: 
+  .875rem,  // small (14px)
+  1rem, // paragraph, heading 6 (16px)
+  1.125rem, // heading 5 (18px)
+  1.25rem, // heading 4 (20px)
+  1.625rem, // heading 3 (26px)
+  2rem, // heading 2 (32px)
+  2.25rem // heading 1 (36px)

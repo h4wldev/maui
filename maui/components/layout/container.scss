@@ -1,0 +1,26 @@
+@use 'sass:map';
+
+@import '../../styles/variables/index';
+
+
+.maui-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  box-sizing: border-box;
+
+  &.maui-container--{
+    &fluid {
+      padding-left: $outer-margin-size;
+      padding-right: $outer-margin-size;
+    }
+  }
+}
+
+@each $device, $size in $screen-sizes {
+  @media screen and (min-width: $size) {
+    .maui-container {
+      width: map.get($container-sizes, $device);
+    }
+  }
+}
