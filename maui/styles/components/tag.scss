@@ -1,4 +1,4 @@
-@import '../../styles/variables/index';
+@import '../variables/index';
 
 .maui-tag {
   display: inline-flex;
@@ -21,7 +21,7 @@
     }
   }
   
-  &.maui-tag-- {
+  &-- {
     &hollow {
       background-color: transparent;
     }
@@ -40,9 +40,9 @@
 
     & {
       &default {
-        background-color: $white-color;
-        border-color: $lighten-gray-color;
-        color: $lighten-black-color;
+        background-color: $g-50;
+        border-color: $g-400;
+        color: $g-800;
 
         &.maui-tag--hollow {      
           background-color: transparent;

@@ -3,6 +3,8 @@ import Vue from 'vue'
 import * as OutlineIcon from '@vue-hero-icons/outline'
 import * as SolidIcon from '@vue-hero-icons/solid'
 
+import MauiMixin from '../../mixin/maui'
+
 import { makeProp } from '../../utils/props'
 import createIcon, { sizePropValidator } from './icons/base'
 
@@ -17,6 +19,7 @@ export const Icons = {
 }
 
 export default Vue.component('MuIcon', {
+  mixins: [MauiMixin],
   props: {
     name: makeProp(String, null, true),
     solid: makeProp(Boolean, false),

@@ -1,4 +1,4 @@
-@import '../../styles/variables/index';
+@import '../variables/index';
 @import '../../styles/core/animate';
 
 
@@ -16,7 +16,7 @@
   height: 32px;
   min-width: 32px;
   vertical-align: middle;
-  color: $lighten-black-color;
+  color: $g-800;
   position: relative;
   outline: 0;
   line-height: 1;
@@ -37,8 +37,15 @@
       order: 2;
     }
 
+    &close {
+      order: 9;
+      cursor: pointer;
+      padding-left: .6em;
+      margin-right: -0.4em;
+    }
+
     &icon {
-      &.maui-button__icon-- {
+      &-- {
         &prefix {
           order: 1;
           padding-right: .4em;
@@ -52,7 +59,7 @@
     }
   }
 
-  &.maui-button-- {
+  &-- {
     &loading {
       .maui-button__icon {
         > i {
@@ -146,7 +153,7 @@
         }
 
         .maui-button__icon {
-          &.maui-button__icon-- {
+          &-- {
             &prefix {
               order: 1;
               padding-right: .2em;
@@ -166,15 +173,15 @@
       }
 
       &disabled {
-        border-color: $lighten-gray-color !important;
-        color: $lighten-gray-color !important;
-        background-color: $darken-white-color !important;
+        border-color: $g-400 !important;
+        color: $g-400 !important;
+        background-color: $g-300 !important;
         cursor: not-allowed;
 
         &:hover {
-          border-color: $lighten-gray-color !important;
-          color: $lighten-gray-color !important;
-          background-color: $darken-white-color !important;
+          border-color: $g-400 !important;
+          color: $g-400 !important;
+          background-color: $g-300 !important;
         }
 
         &.maui-button--hollow {
@@ -184,18 +191,22 @@
             background-color: transparent !important;
           }
         }
+
+        .maui-button__close {
+          cursor: not-allowed;
+        }
       }
     }
 
     & {
       &default {
-        background-color: $white-color;
-        border-color: $gray-color;
-        color: $lighten-black-color;
+        background-color: $g-50;
+        border-color: $g-500;
+        color: $g-800;
 
         &:hover,
         &.maui-button--pressed {
-          background-color: $darken-white-color;
+          background-color: $g-100;
         }
 
         &.maui-button--hollow {      
@@ -203,7 +214,7 @@
 
           &:hover,
           &.maui-button--pressed {
-            background-color: $darken-white-color;
+            background-color: $g-100;
           }
         }
       }

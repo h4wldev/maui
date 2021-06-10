@@ -7,7 +7,7 @@
   }
 }
 
-@include keyframes(skeleton-loading) {
+@include keyframes(skeletonLoading) {
   0% {
     left: -150px;
   }
@@ -16,3 +16,139 @@
     left: 100%;
   }
 }
+
+@include keyframes(fadeIn) {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@include keyframes(fadeOut) {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+@include keyframes(slideUpIn) {
+  0% {
+    opacity: 0;
+    transform-origin: 0 0;
+    transform: translateY(-4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform-origin: 0 0;
+    transform: translateY(0);
+  }
+}
+
+@include keyframes(slideUpOut) {
+  0% {
+    opacity: 1;
+    transform-origin: 0 0;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform-origin: 0 0;
+    transform: translateY(-4px);
+  }
+}
+
+@include keyframes(slideDownIn) {
+  0% {
+    opacity: 0;
+    transform-origin: 0 0;
+    transform: translateY(4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform-origin: 0 0;
+    transform: translateY(0);
+  }
+}
+
+@include keyframes(slideDownOut) {
+  0% {
+    opacity: 1;
+    transform-origin: 0 0;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform-origin: 0 0;
+    transform: translateY(4px);
+  }
+}
+
+@include keyframes(slideLeftIn) {
+  0% {
+    opacity: 0;
+    transform-origin: 0 0;
+    transform: translateX(-4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform-origin: 0 0;
+    transform: translateX(0);
+  }
+}
+
+@include keyframes(slideLeftOut) {
+  0% {
+    opacity: 1;
+    transform-origin: 0 0;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform-origin: 0 0;
+    transform: translateX(-4px);
+  }
+}
+
+@include keyframes(slideRightIn) {
+  0% {
+    opacity: 0;
+    transform-origin: 0 0;
+    transform: translateX(4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform-origin: 0 0;
+    transform: translateX(0);
+  }
+}
+
+@include keyframes(slideRightOut) {
+  0% {
+    opacity: 1;
+    transform-origin: 0 0;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform-origin: 0 0;
+    transform: translateX(4px);
+  }
+}
+
+@include vue-animation(fade, fade);
+@include vue-animation(slide-up, slideUp);
+@include vue-animation(slide-down, slideDown);
+@include vue-animation(slide-left, slideLeft);
+@include vue-animation(slide-right, slideRight);

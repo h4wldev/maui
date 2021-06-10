@@ -1,0 +1,64 @@
+@import '../variables/index';
+
+
+.maui-collapse {
+  display: block;
+  width: 100%;
+  border-radius: $border-radius-size;
+  border: 1px solid $g-300;
+
+  .maui-collapse-item {
+    width: 100%;
+    border-radius: $border-radius-size;
+    overflow: hidden;
+
+    .collapse-item__ {
+      &title {
+        position: relative;
+        cursor: pointer;
+        background-color: $g-200;
+        padding: .8rem 2rem;
+
+        > * {
+          vertical-align: middle;
+        }
+
+        .collapse-item-title__arrow {
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transition: transform .3s;
+          transform: translateY(-50%);
+          color: $g-500;
+        }
+      }
+
+      &body {
+        overflow: hidden;
+        transition: height .3s linear;
+
+        .collapse-item__content {
+          padding: 1rem;
+        }
+      }
+    }
+
+    &-- {
+      &active {
+        .collapse-item__title {
+          .collapse-item-title__arrow {
+            transform: translateY(-50%) rotate(90deg);
+          }
+        }
+      }
+
+      &disabled {
+        cursor: not-allowed;
+
+        .collapse-item__title {
+          color: $g-400;
+        }
+      }
+    }
+  }
+}

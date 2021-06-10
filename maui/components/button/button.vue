@@ -13,14 +13,15 @@
         'maui-button--block': block,
         'maui-button--has-icon': icon || loading,
         'maui-button--icon-only': (icon || loading) && !$slots.default,
-        'maui-button--loading': loading
+        'maui-button--loading': loading,
+        'maui-button--closeable': closeable
       },
       `maui-button--${variant}`,
       `maui-button--${size}`
     ]"
     :href="href"
     :disabled="disabled"
-    @click="click"
+    @click="clickHandler"
   >
     <div
       v-if="icon || loading"
@@ -34,13 +35,25 @@
         size="1x"
       />
     </div>
-    <div v-if="$slots.default" class="maui-button__content">
+    <div
+      v-if="$slots.default"
+      class="maui-button__content"
+    >
       <slot />
+    </div>
+    <div
+      v-if="closeable"
+      class="maui-button__close"
+      @click="closeHandler"
+    >
+      <mu-icon name="x" />
     </div>
   </component>
 </template>
 
 <script>
+import MauiMixin from '../../mixin/maui'
+
 import { makeProp } from '../../utils/props'
 
 import MuIcon from '../icon/icon.js'
@@ -50,6 +63,7 @@ export default {
   components: {
     MuIcon
   },
+  mixins: [MauiMixin],
   props: {
     variant: makeProp(String, 'default'),
     size: makeProp(String, 'normal', false, ['huge', 'normal', 'tiny', 'tiniest']),
@@ -64,10 +78,11 @@ export default {
     disabled: makeProp(Boolean, false),
     pressed: makeProp(Boolean, false),
     toggle: makeProp(Boolean, false),
+    closeable: makeProp(Boolean, false),
     href: makeProp(String)
   },
   methods: {
-    click (event) {
+    clickHandler (event) {
       if (this.disabled) {
         event.preventDefault()
       } else if (this.toggle) {
@@ -75,11 +90,18 @@ export default {
       }
 
       this.$emit('click', event)
+    },
+    closeHandler () {
+      if (!this.disabled) {
+        return
+      }
+
+      this.$emit('close')
+    },
+    $close () {
+      this.$destroy(true)
+      this.$el.parentNode.removeChild(this.$el)
     }
   }
 }
 </script>
-
-<style lang="scss">
-@import './button';
-</style>

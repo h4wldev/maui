@@ -5,16 +5,15 @@
 </template>
 
 <script>
+import MauiMixin from '../../mixin/maui'
+
 import { makeProp } from '../../utils/props'
 
 export default {
   name: 'MuBreadcrumb',
+  mixins: [MauiMixin],
   props: {
     separator: makeProp(String, '/')
   }
 }
 </script>
-
-<style lang="scss">
-@import 'breadcrumb';
-</style>

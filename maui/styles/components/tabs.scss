@@ -1,0 +1,26 @@
+.maui-tabs {
+  &__ {
+    &nav {
+      margin-bottom: 1rem;
+    }
+
+    &content {
+      display: flex;
+      align-items: flex-start;
+
+      .maui-tab-pane {
+        width: 100%;
+        flex-shrink: 0;
+        height: 0;
+        overflow: hidden;
+
+        &-- {
+          &active {
+            overflow: visible;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

@@ -10,16 +10,15 @@
 </template>
 
 <script>
+import MauiMixin from '../../mixin/maui'
+
 import { makeProp } from '../../utils/props'
 
 export default {
   name: 'MuGroup',
+  mixins: [MauiMixin],
   props: {
     vertical: makeProp(Boolean, false)
   }
 }
 </script>
-
-<style lang="scss">
-@import './group';
-</style>

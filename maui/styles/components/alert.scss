@@ -1,0 +1,45 @@
+@import '../variables/index';
+
+.maui-alert {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: $border-radius-size;
+  font-size: nth($p-sizes, 2);
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: fade;
+
+  &__ {
+    &icon {
+      margin-right: .8rem;
+      font-size: 1.3em;
+    }
+
+    &content {
+      word-break: break-all;
+    }
+
+    &close {
+      position: absolute;
+      cursor: pointer;
+      right: 1rem;
+      margin-top: 2px;
+      top: 1rem;
+    }
+  }
+
+  &-- {
+    &default {
+      background-color: $g-50;
+      border-color: $g-300;
+      color: $g-800;
+    }
+
+    &closeable {
+      padding-right: 3rem;
+    }
+  }
+}

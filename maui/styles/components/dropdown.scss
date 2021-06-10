@@ -1,0 +1,62 @@
+@import '../variables/index';
+
+
+.maui-dropdown {
+  display: inline-block;
+
+  .maui-dropdown__ {
+    &popover {
+      position: absolute;
+      overflow: visible;
+      z-index: 50;
+
+      .maui-dropdown-menu {
+        max-height: 200px;
+        overflow: scroll;
+        border: 1px solid $g-300;
+        box-shadow: 0 1px 3px $g-300;
+        border-radius: $border-radius-size;
+        background-color: $g-50;
+
+        .maui-dropdown-item {
+          min-width: 110px;
+          padding: .6em .7em;
+          cursor: pointer;
+          box-sizing: border-box;
+          border-radius: $border-radius-size;
+
+          &:not(.maui-dropdown-item--disabled) {
+            &:not(.maui-dropdown-item--divided) {
+              &:not(.maui-dropdown-item--title) {
+                &:hover {
+                  background-color: $g-100;
+                }
+              }
+            }
+          }
+
+          &-- {
+            &disabled {
+              cursor: not-allowed;
+              color: $g-400;
+            }
+
+            &divided {
+              cursor: default;
+              padding: 0;
+              margin: .3em;
+              border-bottom: 1px solid $g-300;
+            }
+
+            &title {
+              cursor: default;
+              padding: .4em .7em;
+              font-size: nth($p-sizes, 1);
+              color: $g-500;
+            }
+          }
+        }
+      }
+    }
+  }
+}

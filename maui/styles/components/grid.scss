@@ -1,6 +1,6 @@
 @use 'sass:map';
 
-@import '../../styles/variables/index';
+@import '../variables/index';
 
 
 .maui-grid {
@@ -13,7 +13,7 @@
     flex: 0 0 auto;
     box-sizing: border-box;
 
-    &.maui-column-- {
+    &-- {
       @for $i from 1 through 24 {
         &#{$i} {
           flex-basis: $column-base-width * $i;
@@ -27,7 +27,7 @@
     }
   }
 
-  &.maui-grid-- {
+  &-- {
     &reverse {
       flex-direction: row-reverse;
     }
@@ -50,7 +50,7 @@
   @media screen and (min-width: $size) {
     .maui-grid {
       .maui-column {
-        &.maui-column-- {
+        &-- {
           @for $i from 1 through 24 {
             &#{$device}-#{$i} {
               flex-basis: $column-base-width * $i;

@@ -10,10 +10,13 @@
 </template>
 
 <script>
+import MauiMixin from '../../mixin/maui'
+
 import { makeProp } from '../../utils/props'
 
 export default {
   name: 'MuProgress',
+  mixins: [MauiMixin],
   props: {
     size: makeProp(String, 'normal', false, ['huge', 'normal', 'tiny', 'tiniest']),
     min: makeProp(Number, 0),
@@ -21,7 +24,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import './progress';
-</style>

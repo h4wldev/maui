@@ -1,0 +1,79 @@
+@import '../variables/index';
+
+
+.maui-tooltip {
+  display: inline-block;
+
+  .maui-tooltip__ {
+    &popover {
+      position: absolute;
+      overflow: visible;
+      z-index: 50;
+    }
+
+    &inner {
+      position: relative;
+      box-shadow: 0 1px 6px $g-400;
+      border-radius: $border-radius-size;
+      background-color: $g-50;
+
+      .tooltip-inner__ {
+        &arrow {
+          position: absolute;
+          content: '';
+          width: 10px;
+          height: 10px;
+          background-color: $g-800;
+          box-shadow: 0 1px 6px $g-400;
+          z-index: 0;
+        }
+
+        &content {
+          position: relative;
+          padding: .4em .5em;
+          font-size: nth($p-sizes, 1);
+          background-color: $g-800;
+          color: $g-50;
+          z-index: 1;
+          border-radius: $border-radius-size;
+        }
+      }
+    }
+  }
+
+  &-- {
+    &placement- {
+      &top,
+      &top-left,
+      &top-right {
+        .maui-tooltip__popover {
+          padding-bottom: 10px;
+        }
+      }
+
+      &bottom,
+      &bottom-left,
+      &bottom-right {
+        .maui-tooltip__popover {
+          padding-top: 10px;
+        }
+      }
+
+      &left,
+      &left-top,
+      &left-bottom {
+        .maui-tooltip__popover {
+          padding-right: 10px;
+        }
+      }
+
+      &right,
+      &right-top,
+      &right-bottom {
+        .maui-tooltip__popover {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}

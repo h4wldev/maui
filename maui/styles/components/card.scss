@@ -1,7 +1,4 @@
-@import '../../styles/variables/index';
-
-
-$border-color: lighten($lighten-gray-color, 20%);
+@import '../variables/index';
 
 
 .maui-card {
@@ -68,7 +65,7 @@ $border-color: lighten($lighten-gray-color, 20%);
     }
   }
 
-  &.maui-card-- {
+  &-- {
     &has-image {
       padding-top: 0;
     }
@@ -82,13 +79,13 @@ $border-color: lighten($lighten-gray-color, 20%);
     }
 
     &bordered {
-      border-color: $border-color;
+      border-color: $g-300;
 
       .maui-card__ {
         &image,
         &header,
         &footer {
-          border-color: $border-color;
+          border-color: $g-300;
         }
 
         &header,

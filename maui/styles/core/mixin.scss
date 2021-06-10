@@ -23,3 +23,12 @@
   -o-animation: #{$content};
   animation: #{$content};      
 }
+
+@mixin vue-animation($class-name, $keyframe-name) {
+  .#{$class-name}-enter-active {
+    animation: #{$keyframe-name}In .3s ease-in-out both;
+  }
+  .#{$class-name}-leave-active {
+    animation: #{$keyframe-name}Out .3s ease-in-out both;
+  }
+}

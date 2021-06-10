@@ -1,10 +1,10 @@
-@import '../../styles/variables/index';
+@import '../variables/index';
 
 
 .maui-group {
   display: inline-flex;
 
-  &.maui-group-- {
+  &-- {
     &horizontal {
       > * {
         margin-right: -1px;

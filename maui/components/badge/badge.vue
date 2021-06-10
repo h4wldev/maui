@@ -7,7 +7,8 @@
         'maui-badge--hide': hide && $slots.default,
         'maui-badge--only-badge': !$slots.default
       },
-      `maui-badge--${variant}`
+      `maui-badge--${variant}`,
+      `maui-badge--placement-${placement}`
     ]"
   >
     <div
@@ -31,16 +32,25 @@
 </template>
 
 <script>
+import MauiMixin from '../../mixin/maui'
+
 import { makeProp } from '../../utils/props'
 
 export default {
   name: 'MuBadge',
+  mixins: [MauiMixin],
   props: {
     variant: makeProp(String, 'default'),
     value: makeProp([String, Number], 0),
     dot: makeProp(Boolean, false),
     hide: makeProp(Boolean, false),
-    maxValue: makeProp(Number, null)
+    maxValue: makeProp(Number, null),
+    placement: makeProp(String, 'top-right', false, [
+      'bottom', 'bottom-left', 'bottom-right',
+      'top', 'top-left', 'top-right',
+      'left', 'left-top', 'left-bottom',
+      'right', 'right-top', 'right-bottom'
+    ])
   },
   computed: {
     value_ () {
@@ -53,7 +63,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import './badge';
-</style>

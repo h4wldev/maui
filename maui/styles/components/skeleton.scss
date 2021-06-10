@@ -1,10 +1,10 @@
-@import '../../styles/variables/index';
+@import '../variables/index';
 @import '../../styles/core/animate';
 
 
 .maui-skeleton {
   display: inline-block;
-  background-color: $darken-white-color;
+  background-color: $g-300;
   position: relative;
   overflow: hidden;
 
@@ -20,13 +20,13 @@
     background: linear-gradient(
       to right,
       transparent 0%,
-      $lighten-gray-color 50%,
+      $g-400 50%,
       transparent 100%
     );
-    @include animation('skeleton-loading 2.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite');
+    @include animation('skeletonLoading 2.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite');
   }
 
-  &.maui-skeleton-- {
+  &-- {
     &circle {
       border-radius: 100%;
     }

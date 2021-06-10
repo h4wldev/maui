@@ -1,22 +1,18 @@
 <template>
   <div
     class="maui-card"
-    :class="[
-      {
-        'maui-card--has-image': image,
-        'maui-card--bordered': bordered,
-        'maui-card--squared': squared
-      }
-    ]"
+    :class="{
+      'maui-card--has-image': image,
+      'maui-card--bordered': bordered,
+      'maui-card--squared': squared
+    }"
   >
     <div
       v-if="image"
       class="maui-card__image"
-      :class="[
-        {
-          'maui-card__image--no-animation': noImageAnimation
-        }
-      ]"
+      :class="{
+        'maui-card__image--no-animation': noImageAnimation
+      }"
       :style="{
         paddingBottom: imageHeight
       }"
@@ -55,10 +51,13 @@
 </template>
 
 <script>
+import MauiMixin from '../../mixin/maui'
+
 import { makeProp } from '../../utils/props'
 
 export default {
   name: 'MuCard',
+  mixins: [MauiMixin],
   props: {
     image: makeProp(String, null),
     imageRatio: makeProp(String, '1.85:1'),
@@ -76,7 +75,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import 'card';
-</style>

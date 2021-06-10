@@ -1,0 +1,92 @@
+@import '../variables/index';
+
+
+.maui-popover {
+  display: inline-block;
+
+  .maui-popover__ {
+    &popover {
+      position: absolute;
+      overflow: visible;
+      z-index: 50;
+    }
+
+    &inner {
+      position: relative;
+      box-shadow: 0 1px 6px $g-400;
+      border-radius: $border-radius-size;
+      background-color: $g-50;
+
+      .popover-inner__ {
+        &arrow {
+          position: absolute;
+          content: '';
+          width: 10px;
+          height: 10px;
+          background-color: $g-50;
+          box-shadow: 0 1px 6px $g-400;
+          z-index: 0;
+        }
+
+        &header {
+          position: relative;
+          border-top-left-radius: $border-radius-size;
+          border-top-right-radius: $border-radius-size;
+          padding: .5em .8em;
+          min-width: 160px;
+          font-size: nth($p-sizes, 2);
+          border-bottom: 1px solid $g-300;
+          box-sizing: border-box;
+          font-weight: bold;
+          background-color: $g-50;
+          z-index: 1;
+        }
+
+        &content {
+          position: relative;
+          padding: .8em;
+          font-size: nth($p-sizes, 1);
+          background-color: $g-50;
+          z-index: 1;
+          border-radius: $border-radius-size;
+        }
+      }
+    }
+  }
+
+  &-- {
+    &placement- {
+      &top,
+      &top-left,
+      &top-right {
+        .maui-popover__popover {
+          padding-bottom: 15px;
+        }
+      }
+
+      &bottom,
+      &bottom-left,
+      &bottom-right {
+        .maui-popover__popover {
+          padding-top: 15px;
+        }
+      }
+
+      &left,
+      &left-top,
+      &left-bottom {
+        .maui-popover__popover {
+          padding-right: 15px;
+        }
+      }
+
+      &right,
+      &right-top,
+      &right-bottom {
+        .maui-popover__popover {
+          padding-left: 15px;
+        }
+      }
+    }
+  }
+}

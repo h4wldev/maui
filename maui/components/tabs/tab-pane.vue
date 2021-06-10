@@ -1,8 +1,8 @@
 <template>
   <div
-    class="maui-container"
+    class="maui-tab-pane"
     :class="{
-      'maui-container--fluid': fluid
+      'maui-tab-pane--active': active
     }"
   >
     <slot />
@@ -15,10 +15,16 @@ import MauiMixin from '../../mixin/maui'
 import { makeProp } from '../../utils/props'
 
 export default {
-  name: 'MuContainer',
+  name: 'MuTabPane',
   mixins: [MauiMixin],
   props: {
-    fluid: makeProp(Boolean, false)
+    label: makeProp(String, null, true),
+    disabled: makeProp(Boolean, false)
+  },
+  data () {
+    return {
+      active: false
+    }
   }
 }
 </script>

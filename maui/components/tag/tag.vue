@@ -7,7 +7,7 @@
         'maui-tag--pill': pill,
         'maui-tag--squared': squared,
         'maui-tag--dashed': dashed,
-        'maui-tag--closable': closable
+        'maui-tag--closeable': closeable
       },
       `maui-tag--${variant}`
     ]"
@@ -16,9 +16,9 @@
       <slot />
     </div>
     <div
-      v-if="closable"
+      v-if="closeable"
       class="maui-tag__close"
-      @click="close"
+      @click="$emit('close')"
     >
       <mu-icon name="x" />
     </div>
@@ -26,26 +26,26 @@
 </template>
 
 <script>
+import MauiMixin from '../../mixin/maui'
+
 import { makeProp } from '../../utils/props'
 
 export default {
   name: 'MuTag',
+  mixins: [MauiMixin],
   props: {
     variant: makeProp(String, 'default'),
     pill: makeProp(Boolean, false),
     hollow: makeProp(Boolean, false),
     dashed: makeProp(Boolean, false),
     squared: makeProp(Boolean, false),
-    closable: makeProp(Boolean, false)
+    closeable: makeProp(Boolean, false)
   },
   methods: {
-    close (e) {
-      this.$emit('close', e)
+    $close () {
+      this.$destroy(true)
+      this.$el.parentNode.removeChild(this.$el)
     }
   }
 }
 </script>
-
-<style lang="scss">
-@import './tag';
-</style>

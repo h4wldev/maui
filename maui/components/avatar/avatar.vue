@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import MauiMixin from '../../mixin/maui'
+
 import { makeProp } from '../../utils/props'
 
 import MuIcon from '../icon/icon.js'
@@ -51,6 +53,7 @@ export default {
   components: {
     MuIcon
   },
+  mixins: [MauiMixin],
   props: {
     image: makeProp(String, null),
     icon: makeProp(String, null),
@@ -89,7 +92,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import 'avatar';
-</style>

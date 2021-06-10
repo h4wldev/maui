@@ -1,0 +1,37 @@
+@import '../variables/index';
+
+.maui-pagination {
+  display: inline-flex;
+
+  .maui-pagination__ {
+    &item {
+      margin: 0 .2rem;
+
+      &:hover {
+        .maui-button {
+          font-weight: bold;
+        }
+      }
+
+      &-- {
+        &active {
+          .maui-button {
+            font-weight: bold;
+          }
+        }
+
+        &disabled {
+          .maui-button {
+            background-color: transparent !important;
+          }
+        }
+      }
+
+      .maui-button {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+      }
+    }
+  }
+}

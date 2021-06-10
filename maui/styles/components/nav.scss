@@ -1,0 +1,92 @@
+.maui-nav {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+
+  .maui-nav__ {
+    &scroll-action {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2rem;
+
+      &-- {
+        &next {
+          order: 3;
+        }
+
+        &prev {
+          order: 1;
+        }
+
+        &disabled {
+          color: $g-400;
+        }
+      }
+    }
+
+    &wrap {
+      display: flex;
+      order: 2;
+
+      .maui-nav__ {
+        &list {
+          display: flex;
+          transition: transform .3s;
+      
+          .maui-nav__item {
+            display: inline-flex;
+            padding: .6rem 1rem;
+            cursor: pointer;
+        
+            .nav-item__ {
+              &arrow {
+                margin-left: .4rem;
+              }
+            }
+        
+            &-- {
+              &disabled {
+                cursor: not-allowed;
+                color: $g-400;
+              }
+
+              &active {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+
+      &--no-scroll {
+        overflow: visible !important;
+      }
+    }
+
+    &extra {
+      order: 999;
+      margin-left: auto;
+      padding-left: .5rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-- {
+    &vertical {
+      .maui-nav__list {
+        flex-direction: column;
+      }
+    }
+
+    &scrollable {
+      width: 100%;
+
+      .maui-nav__wrap {
+        overflow: hidden;
+      }
+    }
+  }
+}

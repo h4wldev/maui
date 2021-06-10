@@ -1,16 +1,13 @@
-@import '../../styles/variables/index';
+@import '../variables/index';
 
 
 .maui-breadcrumb {
-  margin: 0;
-  padding: 0;
-  list-style: none;
   display: flex;
 
   .maui-breadcrumb__item {
     display: flex;
     align-items: center;
-    color: $gray-color;
+    color: $g-500;
 
     > .breadcrumb-item__ {
       &content {
@@ -20,12 +17,12 @@
 
       &separator {
         margin: 0 .5rem;
-        color: $lighten-gray-color;
+        color: $g-400;
       }
     }
 
     &:last-child {
-      color: $darken-gray-color;
+      color: $g-700;
 
       > .breadcrumb-item__separator {
         display: none;

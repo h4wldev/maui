@@ -1,4 +1,4 @@
-@import '../../styles/variables/index';
+@import '../variables/index';
 
 
 .maui-progress {
@@ -7,7 +7,7 @@
   width: 100%;
   height: nth($p-sizes, 2);
   border-radius: $border-radius-size;
-  background-color: $darken-white-color;
+  background-color: $g-100;
 
   .maui-progress-group {
     width: 100%;
@@ -24,14 +24,14 @@
       font-size: nth($p-sizes, 1);
     }
 
-    &.maui-progress-bar-- {
+    &-- {
       &default {
-        background-color: $lighten-gray-color;
+        background-color: $g-400;
       }
     }
   }
 
-  &.maui-progress-- {
+  &-- {
     &huge {
       height: nth($p-sizes, 5);
 

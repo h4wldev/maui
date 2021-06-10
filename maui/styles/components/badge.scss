@@ -1,0 +1,165 @@
+@import '../variables/index';
+
+.maui-badge {
+  display: inline-flex;
+  position: relative;
+
+  .maui-badge__value {
+    position: absolute;
+    z-index: 3;
+    top: inherit;
+
+    .maui-tag {
+      padding: 0.2rem 0.4rem 0.25rem;
+
+      .maui-tag__content {
+        font-size: nth($p-sizes, 1);
+      }
+    }
+  }
+
+  &-- {
+    &only-badge {
+      .maui-badge__value {
+        position: relative;
+        transform: none;
+      }
+
+      &.maui-badge--dot {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    &dot {
+      &::after {
+        position: absolute;
+        border-radius: 100%;
+        z-index: 3;
+        background-color: transparent;
+        width: 10px;
+        height: 10px;
+        content: '';
+      }
+    }
+
+    &placement- {
+      &top {
+        .maui-badge__value,
+        &.maui-badge--dot::after {
+          top: 0;
+          right: 50%;
+          transform: translate(50%, -50%);
+        }
+
+        &-left {
+          .maui-badge__value,
+          &.maui-badge--dot::after {
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        &-right {
+          .maui-badge__value,
+          &.maui-badge--dot::after {
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+          }
+        }
+      }
+
+      &bottom {
+        .maui-badge__value,
+        &.maui-badge--dot::after {
+          bottom: 0;
+          right: 50%;
+          transform: translate(50%, 50%);
+        }
+
+        &-left {
+          .maui-badge__value,
+          &.maui-badge--dot::after {
+            bottom: 0;
+            left: 0;
+            transform: translate(-50%, 50%);
+          }
+        }
+
+        &-right {
+          .maui-badge__value,
+          &.maui-badge--dot::after {
+            bottom: 0;
+            right: 0;
+            transform: translate(50%, 50%);
+          }
+        }
+      }
+
+      &left {
+        .maui-badge__value,
+        &.maui-badge--dot::after {
+          top: 50%;
+          left: 0;
+          transform: translate(-50%, -50%);
+        }
+
+        &-top {
+          .maui-badge__value,
+          &.maui-badge--dot::after {
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        &-bottom {
+          .maui-badge__value,
+          &.maui-badge--dot::after {
+            bottom: 0;
+            left: 0;
+            transform: translate(-50%, 50%);
+          }
+        }
+      }
+
+      &right {
+        .maui-badge__value,
+        &.maui-badge--dot::after {
+          top: 50%;
+          right: 0;
+          transform: translate(50%, -50%);
+        }
+
+        &-top {
+          .maui-badge__value,
+          &.maui-badge--dot::after {
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+          }
+        }
+
+        &-bottom {
+          .maui-badge__value,
+          &.maui-badge--dot::after {
+            right: 0;
+            bottom: 0;
+            transform: translate(50%, 50%);
+          }
+        }
+      }
+      
+    }
+
+    & {
+      &default {
+        &::after {
+          background-color: $g-400;
+        }
+      }
+    }
+  }
+}
